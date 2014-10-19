@@ -103,7 +103,10 @@ var cionApp = {
   	$('#addUrl').show('slow');
   },
   showUrl: function(url) {
-  	$('<a/>').addClass('url').attr('href',url.get('link')).text(url.get('title')).prependTo('#feed');
+  	console.log(url.id)
+  	var div = $('<div/>').addClass('url-container');
+  	$('<a/>').addClass('url').attr('href',url.get('link')).html(url.get('title')+' <i class="fa fa-remove pull-right delete"></i>').appendTo(div);
+  	div.prependTo('#feed');
   },
   showSession: function(session) {  	
   	// console.log(session.id);
