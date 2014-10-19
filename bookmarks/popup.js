@@ -75,7 +75,7 @@ var cionApp = {
   		$('<small/>').addClass('text-muted').text(user.get('username')).appendTo('body');
   	}
   	checkCookie("session_id");
-  }  
+  },  
   logIn: function() {
     username = $('#username').val();
     password = $('#password').val();
@@ -97,8 +97,6 @@ var cionApp = {
       Parse.User.logOut();
     }
   
-
->>>>>>> cbf9ac91ec483fc851cbcba5840cbcfda1692364
 };
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -146,6 +144,8 @@ function getCookie(cname) {
 function checkCookie(cname) {
     var session_id=getCookie(cname);    
     if (session_id!="") {
+    	var Session = Parse.Object.extend("Session");	
+    	var session = new Session;
     	var query = new Parse.Query(Session);
 		query.get(session_id, {
 		  success: function(session) {
