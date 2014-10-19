@@ -4,16 +4,47 @@
 // });
 
 var cionApp = {
-  startApp: function() {
-    
+  startApp: function() {    
   },
   myAlert: function() {
   	chrome.browserAction.setBadgeText({text:'i'})
   	$('<div/>').text('I appeared').addClass('red').appendTo('body');
   },
-  createFeed: function() {  	
-  	var id = makeid();
-  	$('<h1/>').text('Your session id is '+ id).appendTo('body');
+  createFeed: function() {  	  	
+  	chrome.tabs.getSelected(null, function(tab) {
+        var tabId = tab.id;	
+        var tabUrl = tab.url;  
+        // console.log(tabUrl);    
+        var tabTitle = tab.title;  
+        // console.log(tabTitle);
+        var Session = Parse.Object.extend("Session");		
+		var Url = Parse.Object.extend("Url");		
+
+		var user = Parse.User.current();	
+		var session = new Session();	
+		var url = new Url();		
+
+		console.log(tabUrl);
+
+		url.set("link", tabUrl);
+		url.set("title", tabTitle);
+		
+		url.set("parent", session);
+		url.save(null, {
+			success: function(url) {
+				var session = url.get('parent');
+				var relation = user.relation("follows");	
+				relation.add(session);
+				console.log('saved session to user');
+			}
+		});		
+		user.save();
+	  	console.log(url.attributes);
+	  	cionApp.showUrl(url);
+    });	
+  },
+  showUrl: function(url) {
+  	$('<div/>').addClass('url').html('<a href="'+url.get('link')+'">'+url.get('title')+'</a>').prependTo('#feed');
   },
   signUp: function() {
     username = $('#username').val();
@@ -21,9 +52,7 @@ var cionApp = {
   	var user = new Parse.User();
 		user.set("username", username);
 		user.set("password", password);
-		 
-		// other fields can be set just like with Parse.Object
-		 
+
 		user.signUp(null, {
 		  success: function(user) {
 		    alert('User sign up was a success, try logging in!')
@@ -57,6 +86,7 @@ var cionApp = {
         		$('<small/>').addClass('text-muted').text(user.get('username')).appendTo('body');
         	}  	  	
         },
+        
     logOut: function() {
       Parse.User.logOut();
     },
@@ -70,7 +100,7 @@ var cionApp = {
 document.addEventListener('DOMContentLoaded', function () {
   Parse.initialize("zMzw4YOroYkmhM2YUgPjNMc9BQTxelTMwlb3Oy3h", "GCQ4URRqPsoyXyYVlc48rXuqZEr82Yd4DNeU2Bne");
   cionApp.startApp();   
-  document.getElementById('alertButton').addEventListener('click', cionApp.myAlert);
+  // document.getElementById('alertButton').addEventListener('click', cionApp.myAlert);
   document.getElementById('createFeed').addEventListener('click', cionApp.createFeed);
   document.getElementById('signUp').addEventListener('click', cionApp.signUp);
   document.getElementById('logIn').addEventListener('click', cionApp.logIn);
