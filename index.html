@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="bookmarksApp">
 <head>
 <base href="/">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -12,33 +12,25 @@
 <meta name="author" content="" />
 <meta name="robots" content="index, follow" />
 <title>Bookmarks</title>
-<meta name="Description" content="Promocionales API nos dedicadamos a dar soluciones, contamos con Memorias USB, plumas BIC, agendas 2014 y todo tipo de artículos promocionales con tu logotipo." />
-<meta property="og:title" content="Promocionales API - Artículos promocionales y regalos personalizados"/>
-<meta property="og:description" content="Promocionales API nos dedicadamos a dar soluciones, contamos con Memorias USB, plumas BIC, agendas 2014 y todo tipo de artículos promocionales con tu logotipo."/>
+<meta name="Description" content="" />
+<meta property="og:title" content=""/>
+<meta property="og:description" content=""/>
 <!-- STYLES -->
 <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:400,600' />
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
-<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" /> -->
-<!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
-<!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css" /> -->
-<link rel="stylesheet" href="css/font-awesome.min.css" />
-<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
 <!-- SCRIPTS -->
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-animate.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-<script src="js/bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>
-<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
-<!-- <script src="js/angularjs/angular-infinite-scroll.min.js"></script> -->
-<!-- <script src="js/angularjs/angular.min.js"></script>
-<script src="js/angularjs/angular-route.js"></script>
-<script src="js/angularjs/angular-animate.js"></script>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/underscore.min.js"></script> -->
-<script type="text/javascript" src="js/fastclick/fastclick.js"></script>  
-<script src="js/script.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/fastclick/lib/fastclick.js"></script>  
+<script src="script.js"></script>
+</head>
+<body>
+	<header></header>
+	<div id="main">      	
+	  <div class="page {{ pageClass }}" ng-view></div>    
+	</div>
+	<footer></footer>
+</body>
+</html>	
