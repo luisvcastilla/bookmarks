@@ -1,4 +1,4 @@
-var cionApp = angular.module('cionApp', ['ngRoute','ngAnimate', 'angularParse']);	
+var cionApp = angular.module('cionApp', ['ngRoute','ngAnimate','picardy.fontawesome', 'angularParse']);			
 cionApp.config(function($routeProvider, $locationProvider) {
 	// $locationProvider.html5Mode(true).hashPrefix('!');
 	$routeProvider		
@@ -17,6 +17,13 @@ cionApp.run(function($rootScope, $location) {
 });
 cionApp.controller('mainController', function($scope, $routeParams) {									
 	$scope.pageClass = 'page-all';
+
+        $(".element").typed({
+        strings: ["cool", "easy", "collaborative"],
+        typeSpeed: 30, // typing speed
+        loop: true, // loop on or off (true or false)
+        // callback: function(){ }
+        });
 });	
 cionApp.controller('userController', function($scope, $routeParams) {									
 	$scope.pageClass = 'page-all';	
