@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"box-",
+				"box-content"
+			],
+			[
+				"registration",
+				"registrationId"
+			],
+			[
 				"paddin",
 				"padding-bottom"
 			],
@@ -79,25 +87,42 @@
 			"file": "manifest.json",
 			"settings":
 			{
-				"buffer_size": 609,
+				"buffer_size": 590,
 				"line_ending": "Unix",
 				"name": "{"
+			}
+		},
+		{
+			"file": "popup.js",
+			"settings":
+			{
+				"buffer_size": 413,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "background.js",
 			"settings":
 			{
-				"buffer_size": 280,
+				"buffer_size": 2157,
 				"line_ending": "Unix",
 				"name": "chrome.browserAction.onClicked.addListener(functio"
+			}
+		},
+		{
+			"file": "test.html",
+			"settings":
+			{
+				"buffer_size": 768,
+				"line_ending": "Unix",
+				"name": "test.html"
 			}
 		},
 		{
 			"file": "mystyles.css",
 			"settings":
 			{
-				"buffer_size": 184,
+				"buffer_size": 212,
 				"line_ending": "Unix",
 				"name": "*{margin:0;}"
 			}
@@ -106,7 +131,7 @@
 			"file": "popup.html",
 			"settings":
 			{
-				"buffer_size": 705,
+				"buffer_size": 757,
 				"line_ending": "Unix"
 			}
 		},
@@ -117,14 +142,6 @@
 				"buffer_size": 83095,
 				"line_ending": "Unix",
 				"name": "/*! jQuery v2.0.0 | (c) 2005, 2013 jQuery Foundati"
-			}
-		},
-		{
-			"file": "popup.js",
-			"settings":
-			{
-				"buffer_size": 2766,
-				"line_ending": "Unix"
 			}
 		}
 	],
@@ -164,7 +181,6 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/Vaio/Development/bookmarks"
 	],
 	"file_history":
 	[
@@ -509,7 +525,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -518,15 +534,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 609,
+						"buffer_size": 590,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								606,
-								606
+								26,
+								26
 							]
 						],
 						"settings":
@@ -543,24 +559,57 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "background.js",
+					"file": "popup.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 280,
+						"buffer_size": 413,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								191,
-								191
+								412,
+								412
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "background.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2157,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2156,
+								2004
 							]
 						],
 						"settings":
@@ -572,27 +621,57 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 767.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "mystyles.css",
+					"buffer": 3,
+					"file": "test.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 184,
+						"buffer_size": 768,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								133,
-								133
+								768,
+								768
+							]
+						],
+						"settings":
+						{
+							"auto_name": "test.html",
+							"incomplete_sync": null,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "mystyles.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 212,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								173,
+								173
 							]
 						],
 						"settings":
@@ -607,24 +686,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 5,
 					"file": "popup.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 705,
+						"buffer_size": 757,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								198,
-								198
+								234,
+								234
 							]
 						],
 						"settings":
@@ -640,11 +719,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 6,
 					"file": "jquery.js",
 					"semi_transient": false,
 					"settings":
@@ -667,39 +746,6 @@
 							"remote_loading": false,
 							"synced": false,
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "popup.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2766,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								436,
-								380
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

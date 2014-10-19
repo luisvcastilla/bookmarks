@@ -3,19 +3,24 @@
   <head>
     <title>Getting Started Extension's Popup</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">    
-    <link rel="stylesheet" href="mystyles.css">    
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
-     -->    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="mystyles.css">            
+    <script src="jquery.js"></script>
     <script src="popup.js"></script>
+    <script src="parse.min.js"></script>
   </head>
   <body>
-    <img src="http://www.sititec.com/wp-content/uploads/2014/09/sititec-logo2.png" alt="">
-    <div style="background:red;">This is it</div>
-    <i class="fa fa-phone"></i> problem
+    <img src="http://cion.local/img/logo.png" alt=""> 
+    <div id="createFeed" class="btn btn-success btn-sm pull-right">Create feed &nbsp;&nbsp;<i class="fa fa-plus-circle"></i></div>
+    <hr class="soften">
+        <div id="signUp" class="btn btn-primary btn-sm">
+          signup
+        </div>
+    <hr class="soften">   
+        <div id="alertButton" class="btn btn-primary btn-sm">
+          <i class="fa fa-facebook"></i> signup with fb
+        </div>
+    <hr class="soften">
   </body>
 </html>
 

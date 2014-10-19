@@ -66,3 +66,20 @@ chrome.gcm.onMessage.addListener(function(message) {
   console.log('a message was received');
 });
 
+chrome.browserAction.onClicked.addListener(function(tab) {
+  chrome.tabs.executeScript({
+    code: 'document.body.style.backgroundColor="red"'
+  });
+});
+
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+    alert("message received");
+});
+
+// chrome.windows.create({
+//     type : 'popup',
+//     url : "http://cion.local/perro.html",
+//     type: "popup"
+// }, function(newWindow) {
+
+// });

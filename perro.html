@@ -5,21 +5,18 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
 		<!-- SCRIPTS -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script>
-			// The ID of the extension we want to talk to.
-			var editorExtensionId = "inejcpkfmfdahaddbpmbgnpdamohedja";
-
-			// Make a simple request:
-			chrome.runtime.sendMessage(editorExtensionId, {openUrlInEditor: url},
-			  function(response) {
-			    if (!response.success)
-			      handleError(url);
-			  });
-			  console.log('yeai')
-		</script>
+		<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>		-->
 	</head>
 	<body>
-		
+		<script>
+		    alert('asdf');
+		    var go = function() {
+		    	alert('asdf');
+		        var event = document.createEvent('Event');
+		        event.initEvent('hello');
+		        document.dispatchEvent(event);
+		    }
+		</script>
+	<a href="javascript:go();">Click me</a>
 	</body>
 </html>

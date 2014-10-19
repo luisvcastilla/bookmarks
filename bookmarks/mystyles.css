@@ -1,4 +1,7 @@
 *{margin:0;}
-body {min-width: 367px;overflow-x: hidden;padding:10px;   box-sizing: border-box;}
-img {margin: 5px;vertical-align: middle;width:100%;    box-sizing: border-box;}
+body {min-width: 367px;overflow-x:hidden;padding:10px;box-sizing:border-box;}
+
 div{background:#f9f9f9;color:#333;}
+img {vertical-align:middle;width:100%;box-sizing: border-box;max-width:20%;}
+hr.soften {height: 1px;margin:10px 0;}
+i{font-size:18px;}

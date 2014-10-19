@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="AbstractSmtpTransport.php" server="C:/Users/XPS15z/Documents/Nuvlar/Clientes/Laing/Desarrollo/website/" local="130159496650000000" remote="130159496650000000" Dst="1" />
+<file name="EsmtpHandler.php" server="C:/Users/XPS15z/Documents/Nuvlar/Clientes/Laing/Desarrollo/website/" local="130159496650000000" remote="130159496650000000" Dst="1" />
+<file name="EsmtpTransport.php" server="C:/Users/XPS15z/Documents/Nuvlar/Clientes/Laing/Desarrollo/website/" local="130159496650000000" remote="130159496650000000" Dst="1" />
+<file name="FailoverTransport.php" server="C:/Users/XPS15z/Documents/Nuvlar/Clientes/Laing/Desarrollo/website/" local="130159496650000000" remote="130159496650000000" Dst="1" />
+<file name="IoBuffer.php" server="C:/Users/XPS15z/Documents/Nuvlar/Clientes/Laing/Desarrollo/website/" local="130159496650000000" remote="130159496650000000" Dst="1" />
+<file name="LoadBalancedTransport.php" server="C:/Users/XPS15z/Documents/Nuvlar/Clientes/Laing/Desarrollo/website/" local="130159496650000000" remote="130159496650000000" Dst="1" />
+<file name="MailInvoker.php" server="C:/Users/XPS15z/Documents/Nuvlar/Clientes/Laing/Desarrollo/website/" local="130159496650000000" remote="130159496650000000" Dst="1" />
+<file name="MailTransport.php" server="C:/Users/XPS15z/Documents/Nuvlar/Clientes/Laing/Desarrollo/website/" local="130159496650000000" remote="130159496650000000" Dst="1" />
+<file name="NullTransport.php" server="C:/Users/XPS15z/Documents/Nuvlar/Clientes/Laing/Desarrollo/website/" local="130159496650000000" remote="130159496650000000" Dst="1" />
+<file name="SendmailTransport.php" server="C:/Users/XPS15z/Documents/Nuvlar/Clientes/Laing/Desarrollo/website/" local="130159496650000000" remote="130159496650000000" Dst="1" />
+<file name="SimpleMailInvoker.php" server="C:/Users/XPS15z/Documents/Nuvlar/Clientes/Laing/Desarrollo/website/" local="130159496650000000" remote="130159496650000000" Dst="1" />
+<file name="SmtpAgent.php" server="C:/Users/XPS15z/Documents/Nuvlar/Clientes/Laing/Desarrollo/website/" local="130159496650000000" remote="130159496650000000" Dst="1" />
+<file name="SpoolTransport.php" server="C:/Users/XPS15z/Documents/Nuvlar/Clientes/Laing/Desarrollo/website/" local="130159496650000000" remote="130159496650000000" Dst="1" />
+<file name="StreamBuffer.php" server="C:/Users/XPS15z/Documents/Nuvlar/Clientes/Laing/Desarrollo/website/" local="130159496650000000" remote="130159496650000000" Dst="1" />
+<file name="AbstractSmtpTransport.php" server="sititec.com//public_html/laing/" local="130159496650000000" remote="130305798000000000" Dst="1" />
+<file name="EsmtpHandler.php" server="sititec.com//public_html/laing/" local="130159496650000000" remote="130305798000000000" Dst="1" />
+<file name="EsmtpTransport.php" server="sititec.com//public_html/laing/" local="130159496650000000" remote="130305798000000000" Dst="1" />
+<file name="FailoverTransport.php" server="sititec.com//public_html/laing/" local="130159496650000000" remote="130305798000000000" Dst="1" />
+<file name="IoBuffer.php" server="sititec.com//public_html/laing/" local="130159496650000000" remote="130305798000000000" Dst="1" />
+<file name="LoadBalancedTransport.php" server="sititec.com//public_html/laing/" local="130159496650000000" remote="130305798000000000" Dst="1" />
+<file name="MailInvoker.php" server="sititec.com//public_html/laing/" local="130159496650000000" remote="130305798000000000" Dst="1" />
+<file name="MailTransport.php" server="sititec.com//public_html/laing/" local="130159496650000000" remote="130305798000000000" Dst="1" />
+<file name="NullTransport.php" server="sititec.com//public_html/laing/" local="130159496650000000" remote="130305798000000000" Dst="1" />
+<file name="SendmailTransport.php" server="sititec.com//public_html/laing/" local="130159496650000000" remote="130305798000000000" Dst="1" />
+<file name="SimpleMailInvoker.php" server="sititec.com//public_html/laing/" local="130159496650000000" remote="130305798000000000" Dst="1" />
+<file name="SmtpAgent.php" server="sititec.com//public_html/laing/" local="130159496650000000" remote="130305798000000000" Dst="1" />
+<file name="SpoolTransport.php" server="sititec.com//public_html/laing/" local="130159496650000000" remote="130305798000000000" Dst="1" />
+<file name="StreamBuffer.php" server="sititec.com//public_html/laing/" local="130159496650000000" remote="130305798000000000" Dst="1" />
+</dwsync>
