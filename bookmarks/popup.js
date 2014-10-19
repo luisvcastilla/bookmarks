@@ -86,6 +86,10 @@ var cionApp = {
   showUrl: function(url) {
   	$('<div/>').addClass('url').html('<a href="'+url.get('link')+'">'+url.get('title')+'</a>').prependTo('#feed');
   },
+  showSession: function(session) {  	
+  	// console.log(session.id);
+  	$('<option/>').addClass('session').attr('value', session.id).val(session.id).text(session.get('title')).appendTo('#sessionOption');
+  },
   signUp: function() {
     username = $('#username').val();
     password = $('#password').val();
@@ -147,13 +151,14 @@ var cionApp = {
     getSessions: function() {
       var user = Parse.User.current();
       var relation = user.relation("follows");
-      relation.query().descending("updatedAt");
+      // relation.query().descending("updatedAt");
       relation.query().find({
-       success: function(list){
-          var object = list;
-          console.log(object);
-          //object es la sesion.
-          
+       success: function(results){          
+          for (var i = 0; i < results.length; i++) {
+	          var object = results[i];	          
+	          cionApp.showSession(object);
+	          console.log(object);
+	      }                    
         }
       });
     },
@@ -213,6 +218,13 @@ document.addEventListener('DOMContentLoaded', function () {
   	$('#addUrl').on('click',function(e){
   		cionApp.addUrl();
   	});  	
+
+  	$('#sessionOption').on('change',function(e){
+  		var id_ses = $('#sessionOption').val();
+  		setCookie('session_id', id_ses, 36500000000);
+  		location.reload();
+  	});  	
+
   	$('#sessionTitle').on('keypress',function(e) {
   		var code = e.keyCode || e.which;
 		 if(code == 13) { 
@@ -253,6 +265,7 @@ function checkCookie(cname) {
         $('#addUrl').show();
     } else {
       	cionApp.getSessions();  
-        console.log('No sessions');
+      	$('#sessionOption').show();
+        // console.log('No sessions');
     }
 }
