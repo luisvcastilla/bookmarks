@@ -10,16 +10,26 @@
     <script src="parse.min.js"></script>
   </head>
   <body>
-    <img src="http://cion.local/img/logo.png" alt=""> 
+    <!-- <img src="http://cion.local/img/logo.png" alt="">  -->
+    <div id="createFeed" class="btn btn-success btn-sm pull-right">Create feed &nbsp;&nbsp;<i class="fa fa-plus-circle"></i></div>
+    <hr class="soften">
+    <input id="username" class="form-control" type="text" placeholder="username"><br>
+    <input id="password" class="form-control" type="password" placeholder="password"><br>
+    <div id="logIn" class="btn btn-primary btn-sm">
+      Log in
+    </div>
+    <div id="signUp" class="btn btn-primary btn-sm">
+      Sign Up
+    </div> 
+    <hr class="soften">   
+        <div id="alertButton" class="btn btn-primary btn-sm">
+          <i class="fa fa-facebook"></i> signup with fb
+        </div>
     <div id="createFeed" 
       class="btn btn-success btn-sm pull-right">Create feed &nbsp;&nbsp;
         <i class="fa fa-plus-circle"></i>
     </div>
-    <div id="signUp" class="btn btn-primary btn-sm">
-          signup
-    </div>
     <div id="feed"></div>
-          
     <hr class="soften">
   </body>
 </html>
