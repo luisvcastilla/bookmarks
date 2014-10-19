@@ -86,12 +86,10 @@ var cionApp = {
         		$('<small/>').addClass('text-muted').text(user.get('username')).appendTo('body');
         	}  	  	
         },
-        
+
     logOut: function() {
       Parse.User.logOut();
-    },
-
-  }
+    }
   
 
 };
