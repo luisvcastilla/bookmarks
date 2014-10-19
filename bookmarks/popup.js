@@ -95,6 +95,49 @@ var cionApp = {
 
     logOut: function() {
       Parse.User.logOut();
+    },
+
+    getSessions: function() {
+      var user = Parse.user.current();
+      var relation = user.relation("follows");
+      relation.query().descending("score");
+      relation.query().find({
+       success: function(list){
+        //asdf
+      }});
+    },
+
+    getUrls: function(session){
+
+    var Url = Parse.Object.extend("Url");
+    var query = new Parse.Query(Url);
+    query.equalTo("parent", session);
+    query.find({
+      success: function(results) {
+          console.log(results);
+        for (var i = 0; i < results.length; i++) {
+          var object = results[i];
+          cionApp.showUrl(object);
+        }
+      },
+      error: function(error) {
+        console.log("Error: " + error.code + " " + error.message);
+      }
+    })},
+
+    getUrlsFromSession: function(){
+      var Session = Parse.Object.extend("Session");
+      var query = new Parse.Query(Session);
+      query.get("epnEki3T64", {
+        success: function(session) {
+          console.log(session.id);
+          cionApp.getUrls(session);
+        },
+        error: function(object, error) {
+          // The object was not retrieved successfully.
+          // error is a Parse.Error with an error code and message.
+        }
+      });
     }
   
 };
