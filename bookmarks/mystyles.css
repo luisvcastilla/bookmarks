@@ -9,7 +9,7 @@ background: -moz-linear-gradient(#f2f5fb,#fff);
 background: -o-linear-gradient(#f2f5fb,#fff);
 background: linear-gradient(#f2f5fb,#fff);}
 
-div{background:#f9f9f9;color:#333;}
+div{color:#333;text-shadow:0,1px,0 rgba(255,255,255,.5);}
 img {vertical-align:middle;width:100%;box-sizing: border-box;max-width:20%;}
 hr.soften {height: 1px;margin:10px 0;}
 i{font-size:17px !important;vertical-align:top;}
@@ -21,3 +21,4 @@ i{font-size:17px !important;vertical-align:top;}
 .form-control{margin-top:10px;}
 .form-control[type="password"]{margin-bottom:10px;} 
 .truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#logOut{color:#08c;cursor:pointer;}

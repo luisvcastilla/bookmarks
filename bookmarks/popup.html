@@ -13,20 +13,21 @@
 
     <img src="http://cion.local/img/logo.png" alt=""> 
     <small id="session-title"></small>
-    <div id="createSession" 
+    <div id="createSession" style="display:none;" 
       class="btn btn-success btn-sm pull-right"><i class="fa fa-plus-circle"></i> Create session        
     </div>
     <div id="addUrl" style="display:none;" 
       class="btn btn-primary btn-sm pull-right"><i class="fa fa-link"></i> &nbsp;Add url         
     </div>
-
-    <input id="username" class="form-control" type="text" placeholder="username">
-    <input id="password" class="form-control" type="password" placeholder="password">
-    <div id="signUp" class="btn btn-primary btn-sm  pull-right">Sign Up</div> 
-    <div id="logIn" class="btn btn-primary btn-sm pull-right" style="margin-right:10px;">Log in</div>
+    <div id="loginBlock">
+      <input id="username" class="form-control" type="text" placeholder="username" required>
+      <input id="password" class="form-control" type="password" placeholder="password" required>
+      <div id="signUp" class="btn btn-primary btn-sm pull-right">Sign Up</div> 
+      <div id="logIn" class="btn btn-primary btn-sm pull-right" style="margin-right:10px;">Log in</div>
+    </div>
     <div class="clearfix"></div>
     <!-- <hr class="soften"> -->
-    <div id="feed">
+    <div id="feed" style="display:none;">
       <input type="text" id="sessionTitle" placeholder="Session name" class="form-control" style="display:none">
     </div>
   </body>
