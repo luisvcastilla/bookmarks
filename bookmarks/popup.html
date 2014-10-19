@@ -11,16 +11,23 @@
   </head>
   <body>
     <img src="http://cion.local/img/logo.png" alt=""> 
-    <div id="createFeed" 
-      class="btn btn-success btn-sm pull-right">Create feed &nbsp;&nbsp;
-        <i class="fa fa-plus-circle"></i>
+    <small id="session-title">Computer Science</small>
+    <div id="createSession" 
+      class="btn btn-success btn-sm pull-right"><i class="fa fa-plus-circle"></i> Create session        
+    </div>
+    <div id="addUrl" style="display:none;" 
+      class="btn btn-primary btn-sm pull-right"><i class="fa fa-link"></i> &nbsp;Add url         
     </div>
     <div id="signUp" class="btn btn-primary btn-sm">
           signup
     </div>
-    <div id="feed"></div>
-          
+    <div class="clearfix"></div>
     <hr class="soften">
+    <div id="feed">
+      <input type="text" id="sessionTitle" placeholder="Session name" class="form-control" style="display:none">
+    </div>
+    <hr class="soften">
+    <footer></footer>
   </body>
 </html>
 

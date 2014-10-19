@@ -1,31 +1,24 @@
-
-// chrome.tabs.create({}, function (e){
-//   alert('hey bro');
-// });
-
 var cionApp = {
   startApp: function() {    
   },
   myAlert: function() {
   	chrome.browserAction.setBadgeText({text:'i'})
   	$('<div/>').text('I appeared').addClass('red').appendTo('body');
-  },
-  createFeed: function() {  	  	
+  },  
+  createSession: function(sessionTitle) {  	  	
+  	var sessionTitle = sessionTitle;
   	chrome.tabs.getSelected(null, function(tab) {
         var tabId = tab.id;	
-        var tabUrl = tab.url;  
-        // console.log(tabUrl);    
-        var tabTitle = tab.title;  
-        // console.log(tabTitle);
+        var tabUrl = tab.url;          
+        var tabTitle = tab.title;          
         var Session = Parse.Object.extend("Session");		
 		var Url = Parse.Object.extend("Url");		
 
 		var user = Parse.User.current();	
 		var session = new Session();	
 		var url = new Url();		
-
-		console.log(tabUrl);
-
+		// console.log(tabUrl);
+		session.set("title",sessionTitle);
 		url.set("link", tabUrl);
 		url.set("title", tabTitle);
 		
@@ -35,13 +28,25 @@ var cionApp = {
 				var session = url.get('parent');
 				var relation = user.relation("follows");	
 				relation.add(session);
-				console.log('saved session to user');
+				console.log(session.id)
+				$('#session-title').text(session.get('title'));	  				  	
+				setCookie('session_id',session.id, 365);	  					
 			}
 		});		
 		user.save();
-	  	console.log(url.attributes);
+	  	// console.log(url.attributes);
 	  	cionApp.showUrl(url);
+	  	cionApp.changeToAddUrlView();
+	  	
     });	
+  },
+  changeToAddUrlView: function() {
+  	$('#createSession').hide('slow');
+	$('#sessionTitle').hide('fast');
+  	$('#sessionTitle').hide('fast');
+  	$('#switchFeed').show('slow');
+  	$('#addUrl').show('slow');
+
   },
   showUrl: function(url) {
   	$('<div/>').addClass('url').html('<a href="'+url.get('link')+'">'+url.get('title')+'</a>').prependTo('#feed');
@@ -66,25 +71,66 @@ var cionApp = {
   	if(user) {  		
   		$('#signUp').hide();
   		$('<small/>').addClass('text-muted').text(user.get('username')).appendTo('body');
-  	}  	  	
+  	}
+  	checkCookie("session_id");
   }  
 };
 
-// Run our kitten generation script as soon as the document's DOM is ready.
 document.addEventListener('DOMContentLoaded', function () {
   Parse.initialize("zMzw4YOroYkmhM2YUgPjNMc9BQTxelTMwlb3Oy3h", "GCQ4URRqPsoyXyYVlc48rXuqZEr82Yd4DNeU2Bne");
-  cionApp.startApp();   
-  // document.getElementById('alertButton').addEventListener('click', cionApp.myAlert);
-  document.getElementById('createFeed').addEventListener('click', cionApp.createFeed);
-  document.getElementById('signUp').addEventListener('click', cionApp.signUp);
-  cionApp.checkSession();   
+  cionApp.startApp();     
+  $(document).ready(function(){
+  	$('#createSession').on('click',function(e){
+  		e.preventDefault();  		
+  		e.stopImmediatePropagation;  		
+  		$('#sessionTitle').show('fast').focus();
+  	});
+  	$('#signUp').on('click',function(e){
+  		cionApp.signUp
+  	});
+  	$('#sessionTitle').on('keypress',function(e) {
+  		var code = e.keyCode || e.which;
+		 if(code == 13) { 
+		 	var title = $('#sessionTitle').val();  
+		 	cionApp.createSession(title);
+		 }
+  	});
+  	cionApp.checkSession();  	
+  })
 });
 
-function makeid() {
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    for(var i=0;i<5;i++) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) != -1) return c.substring(name.length,c.length);
     }
-    return text;
+    return "";
+}
+
+function checkCookie(cname) {
+    var session_id=getCookie(cname);    
+    if (session_id!="") {
+    	var query = new Parse.Query(Session);
+		query.get(session_id, {
+		  success: function(session) {
+		    console.log(session);
+		  },
+		  error: function(error) {
+		    // error is an instance of Parse.Error.
+		  }
+		});
+        alert(session_id);
+    }else{
+        alert('theres no fucijn sesions')
+    }
 }
