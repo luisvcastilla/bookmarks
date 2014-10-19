@@ -52,17 +52,19 @@ var cionApp = {
   	$('<div/>').addClass('url').html('<a href="'+url.get('link')+'">'+url.get('title')+'</a>').prependTo('#feed');
   },
   signUp: function() {
+    username = $('#username').val();
+    password = $('#password').val();
   	var user = new Parse.User();
-		user.set("username", "Luis");
-		user.set("password", "iakere");
-		user.set("email", "luis@sititec.com");
+		user.set("username", username);
+		user.set("password", password);
+
 		user.signUp(null, {
 		  success: function(user) {
-		    alert('horray')
+		    alert('User sign up was a success, try logging in!')
 		  },
 		  error: function(user, error) {
 		    // Show the error message somewhere and let the user try again.
-		    alert("Error: " + error.code + " " + error.message);
+		    alert("User sign up has failed :(\n Error: " + error.code + " " + error.message);
 		  }
 		});
   },
@@ -74,10 +76,34 @@ var cionApp = {
   	}
   	checkCookie("session_id");
   }  
+  logIn: function() {
+    username = $('#username').val();
+    password = $('#password').val();
+    if( username == "" || password == ""){
+      alert("Credentials missing");
+    } else{
+      Parse.User.logIn(username, password, {
+        success: function(user) {
+          alert("USER LOG IN WAS A SUCCESS");
+        },
+        error: function(user, error) {
+         alert("USER LOG IN FAILED MISERABLY, Error: " + error.code + " " + error.message);
+        }
+      });
+    }
+        },
+
+    logOut: function() {
+      Parse.User.logOut();
+    }
+  
+
+>>>>>>> cbf9ac91ec483fc851cbcba5840cbcfda1692364
 };
 
 document.addEventListener('DOMContentLoaded', function () {
   Parse.initialize("zMzw4YOroYkmhM2YUgPjNMc9BQTxelTMwlb3Oy3h", "GCQ4URRqPsoyXyYVlc48rXuqZEr82Yd4DNeU2Bne");
+
   cionApp.startApp();     
   $(document).ready(function(){
   	$('#createSession').on('click',function(e){
