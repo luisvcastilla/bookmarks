@@ -87,7 +87,10 @@ body {
 .img-responsive {
   margin: 0 auto; }
 
+#landing-content {
+  color: #fff; }
+
 body {
-  background: url(/img/sd.png); }
+  background: url(/img/bg.jpg); }
 
 /*# sourceMappingURL=styles.css.map */

@@ -22,6 +22,7 @@ cionApp.controller('mainController', function($scope, $routeParams) {
         strings: ["cool", "easy", "collaborative"],
         typeSpeed: 30, // typing speed
         loop: true, // loop on or off (true or false)
+        
         // callback: function(){ }
         });
 });	
