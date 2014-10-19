@@ -1,5 +1,5 @@
-var bookmarksApp = angular.module('bookmarksApp', ['ngRoute']);			
-bookmarksApp.config(function($routeProvider,$locationProvider) {
+var cionApp = angular.module('cionApp', ['ngRoute']);			
+cionApp.config(function($routeProvider,$locationProvider) {
 	$locationProvider.html5Mode(true).hashPrefix('!');
 	$routeProvider
 		// route for the home page
@@ -9,9 +9,20 @@ bookmarksApp.config(function($routeProvider,$locationProvider) {
 		})									
 		.otherwise({ redirectTo: "/" });			
 });
-bookmarksApp.run(function($rootScope, $location) {	   		
+cionApp.run(function($rootScope, $location) {	   		
 	console.log('running');
 });
-bookmarksApp.controller('mainController', function($scope, $routeParams) {									
+cionApp.controller('mainController', function($scope, $routeParams) {									
 	$scope.pageClass = 'page-all';
 });	
+//SERVICIO DE BOOKMARKS
+	cionApp.factory( 'bmAPI', function($http) {
+		var productos = [];
+		var bmAPI = {
+			slider: function() {
+				var dog = 'yes';
+			    return dog;
+			},							   
+		};
+  		return bmAPI;		
+	});
