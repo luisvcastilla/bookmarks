@@ -124,8 +124,14 @@ background: linear-gradient(#f2f5fb,#fff);}
 	color:$light;
 }
 
+#landing-description{
+	text-color:$light;
+}
+
 body{
 	background:url(/img/bg.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 

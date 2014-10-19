@@ -23,16 +23,15 @@ var cionApp = {
 				
 				url.set("parent", session);
 				url.save(null, {
-					success: function(url) {
+					success: function(url) {						
 						var session = url.get('parent');
 						var relation = user.relation("follows");	
 						relation.add(session);
 						user.save();
-						// console.log(session.id)						
+						cionApp.showUrl(url);
 					}
-				});						
-			  	// console.log(url.attributes);
-			  	cionApp.showUrl(url);
+				});									  	
+			  	
 	        },
 	        error: function(object, error) {
 	          // The object was not retrieved successfully.
@@ -80,7 +79,7 @@ var cionApp = {
   joinSession: function(session_id) {
         var Session = Parse.Object.extend("Session");
         var query = new Parse.Query(Session);
-        console.log(session_id);
+        // console.log(session_id);
         query.get(session_id, {
 	        success: function(session) {
 	          var user = Parse.User.current();
@@ -102,10 +101,10 @@ var cionApp = {
   	$('#switchFeed').show('slow');
   	$('#addUrl').show('slow');
   },
-  showUrl: function(url) {
-  	console.log(url.id)
+  showUrl: function(url) {  	
   	var div = $('<div/>').addClass('url-container');
-  	$('<a/>').addClass('url').attr('href',url.get('link')).html(url.get('title')+' <i class="fa fa-remove pull-right delete"></i>').appendTo(div);
+  	$('<a/>').addClass('url').attr('href',url.get('link')).html(url.get('title')).appendTo(div);
+  	$('<i/>').addClass('fa fa-remove pull-right delete').attr('id',url.id).appendTo(div);
   	div.prependTo('#feed');
   },
   showSession: function(session) {  	
@@ -116,7 +115,7 @@ var cionApp = {
     username = $('#username').val();
     password = $('#password').val();
     if(username == "" || password == ""){
-      console.log('empty')
+      // console.log('empty')
       return;
     } else {
   		var user = new Parse.User();
@@ -149,7 +148,7 @@ var cionApp = {
     username = $('#username').val();
     password = $('#password').val();    
     if(username == "" || password == ""){
-      console.log('empty')
+      // console.log('empty')
       return;
     } else{
       Parse.User.logIn(username, password, {
@@ -182,7 +181,7 @@ var cionApp = {
           for (var i = 0; i < results.length; i++) {
 	          var object = results[i];	          
 	          cionApp.showSession(object);
-	          console.log(object);
+	          // console.log(object);
 	      }                    
         }
       });
@@ -193,17 +192,17 @@ var cionApp = {
     var Url = Parse.Object.extend("Url");
     var query = new Parse.Query(Url);
     query.equalTo("parent", session);
-    console.log(session);
+    // console.log(session);
     query.find({
       success: function(results) {
-          console.log(results);
+          // console.log(results);
         for (var i = 0; i < results.length; i++) {
           var object = results[i];
           cionApp.showUrl(object);
         }
       },
       error: function(error) {
-        console.log("Error: " + error.code + " " + error.message);
+        // console.log("Error: " + error.code + " " + error.message);
       }
     })},
 
@@ -215,7 +214,7 @@ var cionApp = {
         success: function(session) {
           // console.log(session.id);
           $('#session-title').text(session.get('title'));	  				  	
-          var sm = $('<small/>').addClass('text-muted pull-right').html('Session id: <b>'+session.id+'</b>').appendTo('body');
+          var sm = $('<small/>').addClass('text-muted pull-right').html('Your session id: <b>'+session.id+'</b>').appendTo('body');
   			sm.append('<small id="SessionlogOut" class="link"> (Session logout)</small>');
           cionApp.getUrls(session);
         },
@@ -261,16 +260,13 @@ document.addEventListener('DOMContentLoaded', function () {
 		 	cionApp.createSession(title);
 		 }
   	});
-
   	$('#joinSession').on('keypress',function(e) {
   		var code = e.keyCode || e.which;
 		 if(code == 13) { 
 		 	var session_id = $('#joinSession').val();  
 		 	cionApp.joinSession(session_id);
 		 }
-  	});
-
-  	
+  	}); 
   	cionApp.checkSession();  	  	
   }).on('click', '#logOut', function(){  	
   		cionApp.logOut();
@@ -281,8 +277,27 @@ document.addEventListener('DOMContentLoaded', function () {
   	var url = $(this).attr('href');
 // console.log(url);
   	cionApp.openUrl(url);
-  });
-
+  }).on('click','.delete', function(e){  	  
+  	var id_url = $(this).attr('id');
+  	console.log(id_url);
+    var Url = Parse.Object.extend("Url");
+    var query = new Parse.Query(Url);
+    var jqueryObj = $(this).parent();
+    query.get(id_url, {
+	    success: function(url) {
+	      url.destroy({
+			  success: function(url) {
+			  	// location.reload()
+			  	jqueryObj.slideUp('fast');
+			  },
+			  error: function(url, error) {
+			  }
+			});
+	    },
+	    error: function(object, error) {
+	    }      	
+	  });
+	});
 });
 
 function setCookie(cname, cvalue, exdays) {
