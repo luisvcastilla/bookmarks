@@ -15,10 +15,10 @@ hr.soften {height: 1px;margin:10px 0;}
 i{font-size:17px !important;vertical-align:top;}
 .btn-sm{padding:3px 10px;}
 
-.url{background:#fff;border:1px solid #dee2e9;padding:6px;display:block;margin:5px;font-size:12px;border-radius:3px;}
-
+.url{background:#fff;border:1px solid #dee2e9;padding:6px;display:block;margin:5px;font-size:12px;border-radius:3px;transition: all .5s;-moz-transition: all .5s;-webkit-transition: all .5s;cursor:pointer;}
+.url:hover{box-shadow:0 1px 2px 0 rgba(0,0,0,.4);text-decoration: none;}
 #session-title{margin-left:10px;width:133px;}
 .form-control{margin-top:10px;}
 .form-control[type="password"]{margin-bottom:10px;} 
 .truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-#logOut{color:#08c;cursor:pointer;}
+#SessionlogOut,#logOut{color:#08c;cursor:pointer;}
