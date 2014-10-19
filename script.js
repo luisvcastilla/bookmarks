@@ -15,12 +15,13 @@ cionApp.config(function($routeProvider, $locationProvider) {
 cionApp.run(function($rootScope, $location) {	   		
 	console.log('running');
 });
-cionApp.controller('userController', function($scope, $routeParams) {									
-	$scope.pageClass = 'page-all';
-	console.log($routeParams);
-});	
+
 cionApp.controller('mainController', function($scope, $routeParams) {									
 	$scope.pageClass = 'page-all';
+});	
+cionApp.controller('userController', function($scope, $routeParams) {									
+	$scope.pageClass = 'page-all';	
+	console.log($routeParams);
 });	
 //SERVICIO DE BOOKMARKS
 	cionApp.factory( 'bmAPI', function($http) {

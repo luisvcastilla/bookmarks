@@ -13,25 +13,25 @@ $border-color: #ccc;
       -ms-border-radius: $radius;
           border-radius: $radius;
 }
-@mixin simple-border($color){
-	border:1px solid $color;
+@mixin simple-border($opacity){
+	border:1px solid $opacity;
 }
 @mixin transition($speed){
 	transition: all $speed;
 	-moz-transition: all $speed;
 	-webkit-transition: all $speed;
 }
-@mixin box-shadow($x,$y,$z,$w,$color) {
-	-webkit-box-shadow:$x $y $z $w rgba(0,0,0,$color);
-	-moz-box-shadow:$x $y $z $w rgba(0,0,0,$color);
-	-ms-box-shadow:$x $y $z $w rgba(0,0,0,$color);
-	box-shadow:$x $y $z $w rgba(0,0,0,$color);
+@mixin box-shadow($x,$y,$z,$w,$opacity ) {
+	-webkit-box-shadow:$x $y $z $w rgba(0,0,0,$opacity);
+	-moz-box-shadow:$x $y $z $w rgba(0,0,0,$opacity);
+	-ms-box-shadow:$x $y $z $w rgba(0,0,0,$opacity);
+	box-shadow:$x $y $z $w rgba(0,0,0,$opacity);
 }
-@mixin double-box-shadow($x,$y,$z,$w,$color, $x2,$y2,$z2,$w2,$color2) {
-  -webkit-box-shadow:$x $y $z $w rgba(0,0,0,$color), $x2 $y2 $z2 $w2 rgba(0,0,0,$color2);
-  -moz-box-shadow:$x $y $z $w rgba(0,0,0,$color), $x2 $y2 $z2 $w2 rgba(0,0,0,$color2);
-  -ms-box-shadow:$x $y $z $w rgba(0,0,0,$color), $x2 $y2 $z2 $w2 rgba(0,0,0,$color2);
-  box-shadow:$x $y $z $w rgba(0,0,0,$color), $x2 $y2 $z2 $w2 rgba(0,0,0,$color2);
+@mixin double-box-shadow($x,$y,$z,$w,$opacity, $x2,$y2,$z2,$w2,$opacity2) {
+  -webkit-box-shadow:$x $y $z $w rgba(0,0,0,$opacity), $x2 $y2 $z2 $w2 rgba(0,0,0,$opacity2);
+  -moz-box-shadow:$x $y $z $w rgba(0,0,0,$opacity), $x2 $y2 $z2 $w2 rgba(0,0,0,$opacity2);
+  -ms-box-shadow:$x $y $z $w rgba(0,0,0,$opacity), $x2 $y2 $z2 $w2 rgba(0,0,0,$opacity2);
+  box-shadow:$x $y $z $w rgba(0,0,0,$opacity), $x2 $y2 $z2 $w2 rgba(0,0,0,$opacity2);
 }
 
 #user-top-nav{
