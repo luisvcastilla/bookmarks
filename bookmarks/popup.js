@@ -79,7 +79,7 @@ var cionApp = {
   logIn: function() {
     username = $('#username').val();
     password = $('#password').val();
-    if( username == "" || password == ""){
+    if(username == "" || password == ""){
       alert("Credentials missing");
     } else{
       Parse.User.logIn(username, password, {
