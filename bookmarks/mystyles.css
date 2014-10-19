@@ -1,0 +1,4 @@
+*{margin:0;}
+body {min-width: 367px;overflow-x: hidden;padding:10px;   box-sizing: border-box;}
+img {margin: 5px;vertical-align: middle;width:100%;    box-sizing: border-box;}
+div{background:#f9f9f9;color:#333;}
