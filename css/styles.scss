@@ -1,12 +1,16 @@
 @charset "utf-8";
-
+$font-stack: "Open Sans", lucida grande,sans-serif;
 $blue-color: #08c;
 /* Color del logo */
 $primary-color: #3593D0;
+$dark-blue: #08c;
+$light: #fff;
 
 $links-color: #0088CC;
+$orange:#ff8000;
 $text-color: #333;
 $border-color: #ccc;
+$dark-orange: #ff9000;
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
@@ -33,12 +37,80 @@ $border-color: #ccc;
   -ms-box-shadow:$x $y $z $w rgba(0,0,0,$opacity), $x2 $y2 $z2 $w2 rgba(0,0,0,$opacity2);
   box-shadow:$x $y $z $w rgba(0,0,0,$opacity), $x2 $y2 $z2 $w2 rgba(0,0,0,$opacity2);
 }
-
-#user-top-nav{	
-	padding:10px;	
-	@include box-shadow(0,0,3px,0,.5);
+html,body,p,h1,h2,h3,h4,h5,h6,div,section,ul,li,a {
+	font-family: $font-stack;-webkit-font-smoothing:antialiased;
+	/*font-weight:lighter;*/
 }
-.cion-it{}
+body{background: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#f2f5fb),color-stop(100%,#fff));
+background: -webkit-linear-gradient(#f2f5fb,#fff);
+background: -moz-linear-gradient(#f2f5fb,#fff);
+background: -o-linear-gradient(#f2f5fb,#fff);
+background: linear-gradient(#f2f5fb,#fff);}
+#user-top-nav{			
+	@include box-shadow(0,0,3px,0,.5);
+	img.img-responsive{
+		padding:10px;
+	}
+	background-color:rgba(255,255,255,.5);
+	position:static;
+	z-index:2;
+}
+.cion-it{	
+	border-left:1px solid #ccc;
+	text-align:center;
+	line-height:80px;
+	font-size:2em;
+	color:$primary-color;
+	cursor:pointer;
+	i{font-size:1.5em;}
+	&:hover{
+		color:$dark-blue;
+	};
+}
+#user{
+	/*background-image:url(/img/bg.jpg);*/
+	background-size:cover;
+}
+#user-content{	
+	.bookmarks-tag{
+		background-color:$orange;
+		padding:10px 30px;
+		margin-bottom:20px;
+		display:inline-block;	
+		color:$light;
+		h3{margin:0;}
+		text-shadow:0 1px $dark-orange;		
+		position:relative;
+		z-index:-1;
+	}	
+	.bm-folder{
+		@include border-radius(40px);
+		overflow: hidden;
+		padding:25px;
+		background: rgba(255,255,255,.3);	
+		background: #f2f5fb;
+
+		border: 1px solid #dee2e9;
+		width:300px;
+		height:300px;
+		display:inline-block;
+		.row{
+			margin-bottom:20px;
+			&:last-child{
+				margin-bottom:0;
+			};
+		}
+		.bm-url{
+			@include border-radius(15px);
+			width:60px;height:60px;
+			background-color:red;						
+			img{
+				@include border-radius(15px);
+				max-width:60px;
+			}
+		}
+	}
+}
 
 .container-padding{
 	padding-top:100px;
