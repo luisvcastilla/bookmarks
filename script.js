@@ -17,6 +17,13 @@ cionApp.run(function($rootScope, $location) {
 });
 cionApp.controller('mainController', function($scope, $routeParams) {									
 	$scope.pageClass = 'page-all';
+
+        $(".element").typed({
+        strings: ["cool", "easy", "collaborative"],
+        typeSpeed: 30, // typing speed
+        loop: true, // loop on or off (true or false)
+        // callback: function(){ }
+        });
 });	
 cionApp.controller('userController', function($scope, $routeParams) {									
 	$scope.pageClass = 'page-all';	

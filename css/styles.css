@@ -15,6 +15,7 @@ body {
   -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   -ms-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+<<<<<<< HEAD
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   background-color: rgba(255, 255, 255, 0.5);
   position: static;
@@ -80,3 +81,14 @@ body {
       -ms-border-radius: 15px;
       border-radius: 15px;
       max-width: 60px; }
+=======
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5); }
+
+.container-padding {
+  padding-top: 100px; }
+
+.img-responsive {
+  margin: 0 auto; }
+
+/*# sourceMappingURL=styles.css.map */
+>>>>>>> 810284f7e1d444f5a9ffe25f980c368241f087b0

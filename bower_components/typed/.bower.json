@@ -1,0 +1,13 @@
+{
+  "name": "typed",
+  "_cacheHeaders": {
+    "ETag": "\"27b69d08ffba1abc1dff296f1938f7cd\"",
+    "Content-Type": "text/html; charset=utf-8"
+  },
+  "_release": "e-tag:27b69d08f",
+  "main": "index.js",
+  "_source": "https://github.com/mattboldt/typed.js/",
+  "_target": "*",
+  "_originalSource": "https://github.com/mattboldt/typed.js/",
+  "_direct": true
+}
