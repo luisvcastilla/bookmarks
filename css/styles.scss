@@ -34,10 +34,10 @@ $border-color: #ccc;
   box-shadow:$x $y $z $w rgba(0,0,0,$opacity), $x2 $y2 $z2 $w2 rgba(0,0,0,$opacity2);
 }
 
-#user-top-nav{
-	/*background-color: $primary-color;*/
+#user-top-nav{	
 	padding:10px;	
 	@include box-shadow(0,0,3px,0,.5);
 }
+.cion-it{}
 
 

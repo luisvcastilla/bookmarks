@@ -15,7 +15,6 @@ cionApp.config(function($routeProvider, $locationProvider) {
 cionApp.run(function($rootScope, $location) {	   		
 	console.log('running');
 });
-
 cionApp.controller('mainController', function($scope, $routeParams) {									
 	$scope.pageClass = 'page-all';
 });	
@@ -24,13 +23,13 @@ cionApp.controller('userController', function($scope, $routeParams) {
 	console.log($routeParams);
 });	
 //SERVICIO DE BOOKMARKS
-	cionApp.factory( 'bmAPI', function($http) {
-		var productos = [];
-		var bmAPI = {
-			slider: function() {
-				var dog = 'yes';
-			    return dog;
-			},							   
-		};
-  		return bmAPI;		
-	});
+cionApp.factory( 'bmAPI', function($http) {
+	var productos = [];
+	var bmAPI = {
+		slider: function() {
+			var dog = 'yes';
+		    return dog;
+		},							   
+	};
+	return bmAPI;		
+});
