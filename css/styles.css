@@ -1,3 +1,8 @@
+/* Color del logo */
 #user-top-nav {
-  background-color: #0088cc;
-  padding: 10px; }
+  /*background-color: $primary-color;*/
+  padding: 10px;
+  -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5); }
