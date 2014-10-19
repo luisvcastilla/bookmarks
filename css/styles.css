@@ -1,7 +1,82 @@
 /* Color del logo */
+html, body, p, h1, h2, h3, h4, h5, h6, div, section, ul, li, a {
+  font-family: "Open Sans", lucida grande, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  /*font-weight:lighter;*/ }
+
+body {
+  background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0%, #f2f5fb), color-stop(100%, white));
+  background: -webkit-linear-gradient(#f2f5fb, white);
+  background: -moz-linear-gradient(#f2f5fb, white);
+  background: -o-linear-gradient(#f2f5fb, white);
+  background: linear-gradient(#f2f5fb, white); }
+
 #user-top-nav {
-  padding: 10px;
   -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   -ms-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5); }
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
+  position: static;
+  z-index: 2; }
+  #user-top-nav img.img-responsive {
+    padding: 10px; }
+
+.cion-it {
+  border-left: 1px solid #ccc;
+  text-align: center;
+  line-height: 80px;
+  font-size: 2em;
+  color: #3593d0;
+  cursor: pointer; }
+  .cion-it i {
+    font-size: 1.5em; }
+  .cion-it:hover {
+    color: #0088cc; }
+
+#user {
+  /*background-image:url(/img/bg.jpg);*/
+  background-size: cover; }
+
+#user-content .bookmarks-tag {
+  background-color: #ff8000;
+  padding: 10px 30px;
+  margin-bottom: 20px;
+  display: inline-block;
+  color: white;
+  text-shadow: 0 1px #ff9000;
+  position: relative;
+  z-index: -1; }
+  #user-content .bookmarks-tag h3 {
+    margin: 0; }
+#user-content .bm-folder {
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  border-radius: 40px;
+  overflow: hidden;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.3);
+  background: #f2f5fb;
+  border: 1px solid #dee2e9;
+  width: 300px;
+  height: 300px;
+  display: inline-block; }
+  #user-content .bm-folder .row {
+    margin-bottom: 20px; }
+    #user-content .bm-folder .row:last-child {
+      margin-bottom: 0; }
+  #user-content .bm-folder .bm-url {
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+    width: 60px;
+    height: 60px;
+    background-color: red; }
+    #user-content .bm-folder .bm-url img {
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      -ms-border-radius: 15px;
+      border-radius: 15px;
+      max-width: 60px; }

@@ -1,4 +1,4 @@
-var cionApp = angular.module('cionApp', ['ngRoute','ngAnimate']);			
+var cionApp = angular.module('cionApp', ['ngRoute','ngAnimate','picardy.fontawesome']);			
 cionApp.config(function($routeProvider, $locationProvider) {
 	// $locationProvider.html5Mode(true).hashPrefix('!');
 	$routeProvider		
