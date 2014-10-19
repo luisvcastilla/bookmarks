@@ -19,7 +19,7 @@ cionApp.controller('mainController', function($scope, $routeParams) {
 	$scope.pageClass = 'page-all';
 
         $(".element").typed({
-        strings: ["cool", "easy", "collaborative", "quick", "awesome","texan","useful"],
+        strings: ["cool", "easy", "collaborative", "quick", "awesome","Texan","useful"],
         typeSpeed: 30, // typing speed
         loop: true, // loop on or off (true or false)
 

@@ -89,7 +89,7 @@ body {
 
 #landing-content {
   color: #fff; }
-
+.btn-xl{font-weight:600;font-size:18px;}
 body {
   background: url(/img/bg.jpg); }
 
