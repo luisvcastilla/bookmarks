@@ -26,7 +26,7 @@ var cionApp = {
 		url.save(null, {
 			success: function(url) {
 				var session = url.get('parent');
-				var relation = user.relation("follows");	
+				var relation = user.relation('follows');	
 				relation.add(session);
 				console.log(session.id)
 				$('#session-title').text(session.get('title'));	  				  	
