@@ -67,6 +67,7 @@ var cionApp = {
 				user.save();
 				// console.log(session.id)
 				$('#session-title').text(session.get('title'));	  				  	
+				$('#sesiones').hide();
 				setCookie('session_id',session.id, 36500000000);	  					
 			}
 		});				
@@ -76,15 +77,36 @@ var cionApp = {
 	  	
     });	
   },
+  joinSession: function(session_id) {
+        var Session = Parse.Object.extend("Session");
+        var query = new Parse.Query(Session);
+        console.log(session_id);
+        query.get(session_id, {
+	        success: function(session) {
+	          var user = Parse.User.current();
+	          // console.log(session.id);
+	          var relation = user.relation("follows");  
+	          relation.add(session);          
+	          user.save();
+	          setCookie('session_id', session.id, 365);
+	          location.reload();	          
+	        },
+	        error: function(object, error) {
+	        	
+	        }
+        });
+  },
   changeToAddUrlView: function() {
   	$('#createSession').hide('slow');
 	$('#sessionTitle').hide('fast');  	
   	$('#switchFeed').show('slow');
   	$('#addUrl').show('slow');
-
   },
   showUrl: function(url) {
-  	$('<div/>').addClass('url').html('<a href="'+url.get('link')+'">'+url.get('title')+'</a>').prependTo('#feed');
+  	console.log(url.id)
+  	var div = $('<div/>').addClass('url-container');
+  	$('<a/>').addClass('url').attr('href',url.get('link')).html(url.get('title')+' <i class="fa fa-remove pull-right delete"></i>').appendTo(div);
+  	div.prependTo('#feed');
   },
   showSession: function(session) {  	
   	// console.log(session.id);
@@ -119,7 +141,7 @@ var cionApp = {
   		$('#createSession, #feed').show('fast');
   		$('#loginBlock').hide();
   		var sm = $('<small/>').addClass('text-muted').text(user.get('username')).appendTo('body');
-  		sm.append('<small id="logOut" class="link"> (logout)</small>')
+  		sm.append('<small id="logOut" class="link"> (logout)</small>');
   	}
   	checkCookie("session_id");
   },  
@@ -147,7 +169,10 @@ var cionApp = {
       Parse.User.logOut();
       location.reload();
     },
-
+    SessionlogOut: function() {
+    	setCookie('session_id','', -36500000000);	  					
+    	location.reload();
+    },
     getSessions: function() {
       var user = Parse.User.current();
       var relation = user.relation("follows");
@@ -190,6 +215,8 @@ var cionApp = {
         success: function(session) {
           // console.log(session.id);
           $('#session-title').text(session.get('title'));	  				  	
+          var sm = $('<small/>').addClass('text-muted pull-right').html('Session id: <b>'+session.id+'</b>').appendTo('body');
+  			sm.append('<small id="SessionlogOut" class="link"> (Session logout)</small>');
           cionApp.getUrls(session);
         },
         error: function(object, error) {
@@ -197,8 +224,10 @@ var cionApp = {
           // error is a Parse.Error with an error code and message.
         }
       });
+    },
+    openUrl: function(newURL) {    	    	
+    	chrome.tabs.create({ url: newURL });
     }
-  
 };
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -232,9 +261,26 @@ document.addEventListener('DOMContentLoaded', function () {
 		 	cionApp.createSession(title);
 		 }
   	});
+
+  	$('#joinSession').on('keypress',function(e) {
+  		var code = e.keyCode || e.which;
+		 if(code == 13) { 
+		 	var session_id = $('#joinSession').val();  
+		 	cionApp.joinSession(session_id);
+		 }
+  	});
+
+  	
   	cionApp.checkSession();  	  	
   }).on('click', '#logOut', function(){  	
   		cionApp.logOut();
+  }).on('click', '#SessionlogOut', function(){  	
+  		cionApp.SessionlogOut();
+  }).on('click','.url', function(e){
+  	// console.log($(this));
+  	var url = $(this).attr('href');
+// console.log(url);
+  	cionApp.openUrl(url);
   });
 
 });
@@ -262,10 +308,10 @@ function checkCookie(cname) {
     if (session_id!="") {
         cionApp.getUrlsFromSession(session_id);
         $('#createSession').hide();
-        $('#addUrl').show();
+        $('#addUrl').show();        
     } else {
       	cionApp.getSessions();  
-      	$('#sessionOption').show();
+      	$('#sesiones').show();
         // console.log('No sessions');
     }
 }
